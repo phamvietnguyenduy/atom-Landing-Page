@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Navbar from './components/Navbar';
+import Herosaction from './components/Herosaction'
+import react, {useState,useEfect} from "react"
+import Product from './components/Product';
+import DevAPI from './components/DevAPI';
+import Customer from './components/Customer';
+import Contact from './components/Contact';
 function App() {
+  const [checkmenu, setcheckmenu] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar checkmenu={checkmenu} setcheckmenu={setcheckmenu} />
+      <Herosaction checkmenu={checkmenu} />
+      <Product/>
+      <DevAPI/>
+      <Customer/>
+      <Contact />
+      <div className='text-center mb-12 py-12'>Copy Right @Reactjs 2022</div>
     </div>
   );
 }
